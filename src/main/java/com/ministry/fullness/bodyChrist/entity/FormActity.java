@@ -13,7 +13,16 @@ public class FormActity {
     private String type ;
     private String  description ;
     private String coverPicture  ;
-    private String  content ;
+    private String content ;
+    private Boolean visible ;
+
+    public Boolean getVisible() {
+        return visible;
+    }
+
+    public void setVisible(Boolean visible) {
+        this.visible = visible;
+    }
 
     public Long getId() {
         return id;

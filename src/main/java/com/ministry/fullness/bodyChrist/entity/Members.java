@@ -8,6 +8,13 @@ public class Members {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id ;
+    private String name ;
+    private int telephone;
+    private int code;
+    private String email;
+    private String coverPicture;
+    private String pays;
+    private Boolean access  ;
 
     public Long getId() {
         return id;
@@ -17,9 +24,21 @@ public class Members {
         this.id = id;
     }
 
-    private String name ;
-    private int telephone;
-    private int code;
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getTelephone() {
+        return telephone;
+    }
+
+    public void setTelephone(int telephone) {
+        this.telephone = telephone;
+    }
 
     public int getCode() {
         return code;
@@ -29,9 +48,21 @@ public class Members {
         this.code = code;
     }
 
-    private String email;
-    private String coverPicture;
-    private String pays;
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getCoverPicture() {
+        return coverPicture;
+    }
+
+    public void setCoverPicture(String coverPicture) {
+        this.coverPicture = coverPicture;
+    }
 
     public String getPays() {
         return pays;
@@ -41,9 +72,13 @@ public class Members {
         this.pays = pays;
     }
 
-    private Boolean event  ;
+    public Boolean getAccess() {
+        return access;
+    }
 
-    private String type;
+    public void setAccess(Boolean access) {
+        this.access = access;
+    }
 
     public String getType() {
         return type;
@@ -53,23 +88,7 @@ public class Members {
         this.type = type;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+    private String type;
 
-    public void setTelephone(int telephone) {
-        this.telephone = telephone;
-    }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public void setCoverPicture(String coverPicture) {
-        this.coverPicture = coverPicture;
-    }
-
-    public void setEvent(Boolean event) {
-        this.event = event;
-    }
 }

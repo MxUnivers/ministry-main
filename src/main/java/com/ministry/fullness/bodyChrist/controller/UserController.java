@@ -13,7 +13,6 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("api/v1/users")
-@CrossOrigin
 public class UserController {
      @Autowired
      public UserRepository userRepository;
@@ -34,7 +33,7 @@ public class UserController {
              userAccount.setLastname(newUser.getLastname());
              userAccount.setPassword(newUser.getPassword());
              userAccount.setToken(newUser.getToken());
-             return  userRepository.save(newUser);
+             return  userRepository.save(userAccount);
          }else {
              throw new RuntimeException("Utilisateur non trouvé");
          }
@@ -47,7 +46,7 @@ public class UserController {
         if(userOptimal.isPresent()){
             User userAccount = userOptimal.get();
             userAccount.setAccess(newUser.getAccess());
-            return  userRepository.save(newUser);
+            return  userRepository.save(userAccount);
         }else {
             throw new RuntimeException("Utilisateur non trouvé");
         }

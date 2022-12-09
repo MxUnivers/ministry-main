@@ -1,6 +1,7 @@
 package com.ministry.fullness.bodyChrist.entity;
 
 import javax.persistence.*;
+import javax.persistence.GenerationType;
 
 @Entity
 @Table(name="user")

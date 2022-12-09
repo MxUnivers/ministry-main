@@ -12,7 +12,15 @@ public class Temoignage {
     private String coverPicture ;
     private String description ;
     private String  content  ;
+    private Boolean visible ;
 
+    public Boolean getVisible() {
+        return visible;
+    }
+
+    public void setVisible(Boolean visible) {
+        this.visible = visible;
+    }
 
     public String getTitle() {
         return title;
