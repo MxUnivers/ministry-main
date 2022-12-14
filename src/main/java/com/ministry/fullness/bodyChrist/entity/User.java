@@ -4,19 +4,31 @@ import javax.persistence.*;
 import javax.persistence.GenerationType;
 
 @Entity
-@Table(name="user")
+@Table(name="users")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id ;
+    private String username;
     private String firstname;
     private String lastname;
     private String email;
     private String password ;
     private String token;
-    private Boolean active;
-    private Boolean access;
+    private Boolean active =true;
+    private Boolean access =true;
     private String roles;
+
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+
 
     public String getEmail() {
         return email;

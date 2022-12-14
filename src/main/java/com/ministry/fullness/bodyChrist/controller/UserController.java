@@ -12,15 +12,18 @@ import java.util.Optional;
 
 
 @RestController
-@RequestMapping("api/v1/users")
+@RequestMapping("/api/v1/users")
 public class UserController {
      @Autowired
      public UserRepository userRepository;
 
-     @PostMapping("/")
-    public User saveUser (@RequestBody User newUser ){
-         return userRepository.save(newUser);
-     }
+    @PostMapping("/")
+    public ResponseEntity<ApiResponse> saveUser(){
+        User user = userRepository.save(new User());
+        return ResponseEntity.status(HttpStatus.OK).body(
+                new ApiResponse(true, null, user)
+        );
+    }
      //Mettre a jour le compte
      @PutMapping("/{id}")
      User updateUser(@RequestBody User newUser, @PathVariable Long id) {
@@ -28,9 +31,11 @@ public class UserController {
          if(userOptimal.isPresent()){
              User userAccount = userOptimal.get();
              userAccount.setActive(newUser.getActive());
+             userAccount.setUsername(newUser.getUsername());
              userAccount.setEmail(newUser.getEmail());
              userAccount.setFirstname(newUser.getFirstname());
              userAccount.setLastname(newUser.getLastname());
+             userAccount.setRoles(newUser.getRoles());
              userAccount.setPassword(newUser.getPassword());
              userAccount.setToken(newUser.getToken());
              return  userRepository.save(userAccount);

@@ -3,13 +3,15 @@ package com.ministry.fullness.bodyChrist.controller;
 import com.ministry.fullness.bodyChrist.entity.FormActity;
 import com.ministry.fullness.bodyChrist.repository.FormActivityRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.text.Normalizer;
 import java.util.Optional;
 
+
+@Controller
 @RequestMapping("/api/v1/formactivity")
-@RestController
 public class FormActivityController {
     @Autowired
     FormActivityRepository formActivityRepository;
