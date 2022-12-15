@@ -13,11 +13,22 @@ public class User {
     private String firstname;
     private String lastname;
     private String email;
+    private int telephone;
     private String password ;
-    private String token;
+    private String token="PLENITUDE";
     private Boolean active =true;
     private Boolean access =true;
-    private String roles;
+    private String roles = "ADMIN";
+
+    public int getTelephone() {
+        return telephone;
+    }
+
+    public void setTelephone(int telephone) {
+        this.telephone = telephone;
+    }
+
+
 
 
     public String getUsername() {

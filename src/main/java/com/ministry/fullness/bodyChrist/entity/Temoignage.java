@@ -3,7 +3,7 @@ package com.ministry.fullness.bodyChrist.entity;
 import javax.persistence.*;
 
 @Entity
-@Table(name="temoignage")
+@Table(name="temoignages")
 public class Temoignage {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -12,7 +12,29 @@ public class Temoignage {
     private String coverPicture ;
     private String description ;
     private String  content  ;
-    private Boolean visible ;
+    private String  video  ;
+    private String  audio  ;
+    private Boolean visible = true ;
+
+
+    public String getAudio() {
+        return audio;
+    }
+
+    public void setAudio(String audio) {
+        this.audio = audio;
+    }
+
+
+    public String getVideo() {
+        return video;
+    }
+
+    public void setVideo(String video) {
+        this.video = video;
+    }
+
+
 
     public Boolean getVisible() {
         return visible;

@@ -8,12 +8,38 @@ public class FormActity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id ;
-    private String title  ;
-    private String typeform  ;
-    private String type ;
+    private String title ;
     private String  description ;
     private String coverPicture  ;
     private String content ;
+    private String audio ;
+    private String video ;
+    private String typeActivity  ;
+
+    public String getTypeActivity() {
+        return typeActivity;
+    }
+
+    public void setTypeActivity(String typeActivity) {
+        this.typeActivity = typeActivity;
+    }
+
+    public String getAudio() {
+        return audio;
+    }
+
+    public void setAudio(String audio) {
+        this.audio = audio;
+    }
+
+    public String getVideo() {
+        return video;
+    }
+
+    public void setVideo(String video) {
+        this.video = video;
+    }
+
     private Boolean visible ;
 
     public Boolean getVisible() {
@@ -38,22 +64,6 @@ public class FormActity {
 
     public void setTitle(String title) {
         this.title = title;
-    }
-
-    public String getTypeform() {
-        return typeform;
-    }
-
-    public void setTypeform(String typeform) {
-        this.typeform = typeform;
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
     }
 
     public String getDescription() {
